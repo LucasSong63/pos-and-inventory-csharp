@@ -129,6 +129,7 @@ namespace pos_and_inventory_csharp
                     {
                         frmQty frm = new frmQty(this);
                         frm.Productdetails(dr["pcode"].ToString(), double.Parse(dr["price"].ToString()), lblTransno.Text);
+                        //testing
                         dr.Close();
                         cn.Close();
                         frm.ShowDialog();
