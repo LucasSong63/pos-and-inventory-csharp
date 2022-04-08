@@ -313,6 +313,16 @@ namespace pos_and_inventory_csharp.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_shopping_cart_24__1_ {
+            get {
+                object obj = ResourceManager.GetObject("icons8-shopping-cart-24 (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_support_24 {
             get {
                 object obj = ResourceManager.GetObject("icons8-support-24", resourceCulture);
