@@ -127,13 +127,20 @@ namespace pos_and_inventory_csharp
 
                         cn.Open();
                         cm = new SqlCommand("update tblcart set status = 'Sold' where id '" + fpos.dataGridView1.Rows[i].Cells[1].Value.ToString() + "'", cn);
+                        //cm.ExecuteNonQuery();
                         cn.Close();
                     }
+                    frmReceipt frm = new frmReceipt(fpos);
+                    frm.LoadReport(txtCash.Text, txtChange.Text);
+                    frm.ShowDialog();
+
                     MessageBox.Show("Payment Successfully Saved!", "Payment", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                     fpos.GetTransNo();
                     fpos.LoadCart();
                     this.Dispose();
+                    fpos.dataGridView1.Rows.Clear();
+                    fpos.LoadCart();
 
                 }
 

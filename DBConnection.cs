@@ -15,7 +15,7 @@ namespace pos_and_inventory_csharp
 
         public string MyConnection()
         {
-            string con = @"Data Source=ICM-LUCAS;Initial Catalog=POS_DEMO_DB;Integrated Security=True";
+            string con = @"Data Source=LUCAS-LAPTOP;Initial Catalog=POS_DEMO_DB;Integrated Security=True";
             return con;
         }
 

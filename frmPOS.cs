@@ -93,18 +93,18 @@ namespace pos_and_inventory_csharp
                 string transno;
                 int count;
                 cn.Open();
-                cm = new SqlCommand("select top 1 transno from tblcart where transno like ' % " + sdate + "' order by id desc",cn);
+                cm = new SqlCommand("select top 1 transno from tblCart where transno like '%" + sdate + "' order by id desc",cn);
                 dr = cm.ExecuteReader();
                 dr.Read();
                 if (dr.HasRows)
                 { 
                     transno = dr[0].ToString();
                     count = int.Parse(transno.Substring(8, 4));
-                    lblTransno.Text = sdate + count + 1;
+                    lblTransno.Text = sdate + (count + 1).ToString();
 
                 } else 
                     { 
-                    transno = sdate + "0001";
+                    transno = sdate + "1001";
                     lblTransno.Text = transno;
                     } 
                 dr.Close();
@@ -114,7 +114,7 @@ namespace pos_and_inventory_csharp
             }catch (Exception ex)
             {
                 cn.Close();
-                MessageBox.Show(ex.Message, "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message, "Error GetTransNo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -173,7 +173,7 @@ namespace pos_and_inventory_csharp
                     i++;
                     total += Double.Parse(dr["total"].ToString());
                     discount += Double.Parse(dr["disc"].ToString());
-                    dataGridView1.Rows.Add(i, dr["id"].ToString(),dr["pcode"].ToString(), dr["pdesc"].ToString(), dr["price"].ToString(), dr["qty"].ToString(), dr["disc"].ToString(), Double.Parse(dr["total"].ToString()).ToString("#,##0.00"));
+                    dataGridView1.Rows.Add(i, dr["id"].ToString(), dr["pcode"].ToString(), dr["pdesc"].ToString(), dr["price"].ToString(), dr["qty"].ToString(), dr["disc"].ToString(), Double.Parse(dr["total"].ToString()).ToString("#,##0.00"));
                     hasrecord = true;
                 }
                 dr.Close();
@@ -232,6 +232,11 @@ namespace pos_and_inventory_csharp
         {
             lblTime.Text = DateTime.Now.ToString("hh:MM:ss tt");
             lblDate1.Text = DateTime.Now.ToLongDateString();
+        }
+
+        private void lblDate_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
