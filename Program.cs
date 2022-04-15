@@ -16,7 +16,7 @@ namespace pos_and_inventory_csharp
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new frmSecurity());
         }
     }
 }

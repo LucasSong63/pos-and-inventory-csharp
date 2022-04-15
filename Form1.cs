@@ -86,5 +86,19 @@ namespace pos_and_inventory_csharp
             frm.Show();
 
         }
+
+        private void Button8_Click(object sender, EventArgs e)
+        {
+            frmUserAccount frm = new frmUserAccount();
+            frm.TopLevel = false;
+            panel3.Controls.Add(frm);
+            frm.BringToFront();
+            frm.Show();
+        }
+
+        private void lblName_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

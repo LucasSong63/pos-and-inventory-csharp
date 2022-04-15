@@ -19,14 +19,15 @@ namespace pos_and_inventory_csharp
         SqlCommand cm = new SqlCommand();
         SqlDataReader dr;
         DBConnection dbcon = new DBConnection();
+        frmSecurity f;
 
-
-        public frmPOS()
+        public frmPOS(frmSecurity frm)
         {
             InitializeComponent();
             lblDate.Text = DateTime.Now.ToLongDateString();
             cn = new SqlConnection(dbcon.MyConnection());
             this.KeyPreview = true;
+            f = frm;
         }
 
         private void btnNew_Click(object sender, EventArgs e)
@@ -43,7 +44,8 @@ namespace pos_and_inventory_csharp
 
         private void button5_Click(object sender, EventArgs e)
         {
-
+            frmSoldItems frm = new frmSoldItems();
+            frm.ShowDialog();
         }
 
         private void button4_Click(object sender, EventArgs e)

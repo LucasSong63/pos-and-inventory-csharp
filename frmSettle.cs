@@ -126,8 +126,8 @@ namespace pos_and_inventory_csharp
                         cn.Close();
 
                         cn.Open();
-                        cm = new SqlCommand("update tblcart set status = 'Sold' where id '" + fpos.dataGridView1.Rows[i].Cells[1].Value.ToString() + "'", cn);
-                        //cm.ExecuteNonQuery();
+                        cm = new SqlCommand("USE [POS_DEMO_DB] update tblcart set status = 'Sold' where id like'" + fpos.dataGridView1.Rows[i].Cells[1].Value.ToString() +"'", cn);
+                        cm.ExecuteNonQuery();
                         cn.Close();
                     }
                     frmReceipt frm = new frmReceipt(fpos);
@@ -136,16 +136,21 @@ namespace pos_and_inventory_csharp
 
                     MessageBox.Show("Payment Successfully Saved!", "Payment", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                    fpos.GetTransNo();
-                    fpos.LoadCart();
+
+                    //fpos.LoadCart();
+
                     this.Dispose();
                     fpos.dataGridView1.Rows.Clear();
+                    fpos.Refresh();
+                    fpos.dataGridView1.Rows.Clear();
+                    fpos.GetTransNo();
                     fpos.LoadCart();
 
                 }
 
             }catch (Exception ex)
             {
+                cn.Close();
                 MessageBox.Show(ex.Message,"Error Enter Click");
             }
         }

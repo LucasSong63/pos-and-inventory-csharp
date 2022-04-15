@@ -30,7 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.Panel2 = new System.Windows.Forms.Panel();
-            this.Label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.lblRole = new System.Windows.Forms.Label();
             this.Panel1 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.btnStockIn = new System.Windows.Forms.Button();
@@ -44,7 +45,7 @@
             this.btnProduct = new System.Windows.Forms.Button();
             this.Button1 = new System.Windows.Forms.Button();
             this.PictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lblName = new System.Windows.Forms.Label();
             this.Panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -52,11 +53,12 @@
             // Panel2
             // 
             this.Panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.Panel2.Controls.Add(this.lblName);
             this.Panel2.Controls.Add(this.label2);
             this.Panel2.Controls.Add(this.btnStockIn);
             this.Panel2.Controls.Add(this.Button9);
             this.Panel2.Controls.Add(this.Button8);
-            this.Panel2.Controls.Add(this.Label1);
+            this.Panel2.Controls.Add(this.lblRole);
             this.Panel2.Controls.Add(this.Button7);
             this.Panel2.Controls.Add(this.Button6);
             this.Panel2.Controls.Add(this.btnBrand);
@@ -72,16 +74,29 @@
             this.Panel2.Size = new System.Drawing.Size(318, 674);
             this.Panel2.TabIndex = 3;
             // 
-            // Label1
+            // label2
             // 
-            this.Label1.AutoSize = true;
-            this.Label1.ForeColor = System.Drawing.Color.White;
-            this.Label1.Location = new System.Drawing.Point(107, 160);
-            this.Label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.Label1.Name = "Label1";
-            this.Label1.Size = new System.Drawing.Size(87, 17);
-            this.Label1.TabIndex = 1;
-            this.Label1.Text = "Administrator";
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(63, 116);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(175, 24);
+            this.label2.TabIndex = 12;
+            this.label2.Text = "ICM Womai Technology Sdn. Bhd. Copyright\r\n@2022";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblRole
+            // 
+            this.lblRole.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRole.ForeColor = System.Drawing.Color.White;
+            this.lblRole.Location = new System.Drawing.Point(5, 183);
+            this.lblRole.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblRole.Name = "lblRole";
+            this.lblRole.Size = new System.Drawing.Size(309, 17);
+            this.lblRole.TabIndex = 1;
+            this.lblRole.Text = "Administrator";
+            this.lblRole.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Panel1
             // 
@@ -159,6 +174,7 @@
             this.Button8.Text = "   User Settings";
             this.Button8.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.Button8.UseVisualStyleBackColor = false;
+            this.Button8.Click += new System.EventHandler(this.Button8_Click);
             // 
             // Button7
             // 
@@ -310,17 +326,18 @@
             this.PictureBox1.TabIndex = 0;
             this.PictureBox1.TabStop = false;
             // 
-            // label2
+            // lblName
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(63, 116);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(175, 24);
-            this.label2.TabIndex = 12;
-            this.label2.Text = "ICM Womai Technology Sdn. Bhd. Copyright\r\n@2022";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblName.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblName.ForeColor = System.Drawing.Color.White;
+            this.lblName.Location = new System.Drawing.Point(4, 153);
+            this.lblName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblName.Name = "lblName";
+            this.lblName.Size = new System.Drawing.Size(314, 30);
+            this.lblName.TabIndex = 13;
+            this.lblName.Text = "Lucas Song";
+            this.lblName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblName.Click += new System.EventHandler(this.lblName_Click);
             // 
             // Form1
             // 
@@ -348,7 +365,7 @@
         internal System.Windows.Forms.Panel Panel2;
         internal System.Windows.Forms.Button Button9;
         internal System.Windows.Forms.Button Button8;
-        internal System.Windows.Forms.Label Label1;
+        internal System.Windows.Forms.Label lblRole;
         internal System.Windows.Forms.Button Button7;
         internal System.Windows.Forms.Button Button6;
         internal System.Windows.Forms.Button btnBrand;
@@ -361,6 +378,7 @@
         private System.Windows.Forms.Panel panel3;
         internal System.Windows.Forms.Button btnStockIn;
         private System.Windows.Forms.Label label2;
+        internal System.Windows.Forms.Label lblName;
     }
 }
 

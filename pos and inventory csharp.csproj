@@ -58,7 +58,7 @@
       <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1484.0\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
-      <HintPath>packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+      <HintPath>packages\Microsoft.SqlServer.Types.14.0.1016.290\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -154,11 +154,23 @@
     <Compile Include="frmReceipt.Designer.cs">
       <DependentUpon>frmReceipt.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmReportSold.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmReportSold.Designer.cs">
+      <DependentUpon>frmReportSold.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmSearchProductStockin.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmSearchProductStockin.Designer.cs">
       <DependentUpon>frmSearchProductStockin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSecurity.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSecurity.Designer.cs">
+      <DependentUpon>frmSecurity.cs</DependentUpon>
     </Compile>
     <Compile Include="frmSettle.cs">
       <SubType>Form</SubType>
@@ -166,11 +178,23 @@
     <Compile Include="frmSettle.Designer.cs">
       <DependentUpon>frmSettle.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmSoldItems.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSoldItems.Designer.cs">
+      <DependentUpon>frmSoldItems.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmStockIn.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmStockIn.Designer.cs">
       <DependentUpon>frmStockIn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmUserAccount.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmUserAccount.Designer.cs">
+      <DependentUpon>frmUserAccount.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -211,14 +235,26 @@
     <EmbeddedResource Include="frmReceipt.resx">
       <DependentUpon>frmReceipt.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmReportSold.resx">
+      <DependentUpon>frmReportSold.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmSearchProductStockin.resx">
       <DependentUpon>frmSearchProductStockin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSecurity.resx">
+      <DependentUpon>frmSecurity.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmSettle.resx">
       <DependentUpon>frmSettle.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmSoldItems.resx">
+      <DependentUpon>frmSoldItems.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmStockIn.resx">
       <DependentUpon>frmStockIn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmUserAccount.resx">
+      <DependentUpon>frmUserAccount.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -231,6 +267,7 @@
       <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="Report1.rdlc" />
+    <EmbeddedResource Include="Report2.rdlc" />
     <None Include="DataSet1.xsc">
       <DependentUpon>DataSet1.xsd</DependentUpon>
     </None>
@@ -338,6 +375,9 @@
     <None Include="Resources\icons8-shopping-cart-24 %281%29.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\icons8-print-24.png" />
+    <None Include="Resources\icons8-user-24 %281%29.png" />
+    <None Include="Resources\icons8-password-24.png" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
